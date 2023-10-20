@@ -18,7 +18,7 @@ type EducationHistory = {
   to: Date | "now";
 };
 
-function SectionHeaderText(props) {
+function SectionHeaderText(props: { children: any }) {
   const { children } = props;
   return <h4 className="pb-5 text-xl font-semibold">{children}</h4>;
 }
