@@ -1,27 +1,7 @@
-import Image from "next/image";
-
-type PortfolioLink = { name: string; link: string; content: string };
-type Skill = { name: string; subSkill: string[] };
-type WorkHistory = {
-  company: string;
-  from: Date;
-  to: Date | "now";
-  positions: [{ positionTitle: string; acheivments: string[] }];
-};
-type EducationHistory = {
-  school: string;
-  level: "Masters" | "Bachelors";
-  course: string;
-  gpa: number;
-  awards: string[];
-  from: Date;
-  to: Date | "now";
-};
-
-function SectionHeaderText(props: { children: any }) {
-  const { children } = props;
-  return <h4 className="pb-5 text-xl font-semibold">{children}</h4>;
-}
+import { PortfolioLinks } from "@/components/Links";
+import { Skills } from "@/components/Skills";
+import { WorkHistoryComponent } from "@/components/WorkHistory";
+import { PortfolioLink, Skill, WorkHistory, EducationHistory } from "@/types";
 
 export default function Home() {
   const links: PortfolioLink[] = [
@@ -88,75 +68,13 @@ export default function Home() {
         My Portfolio
       </h2>
       <section>
-        <SectionHeaderText>
-          Robera Worku - Computer/Software Engineer, Cybersecurity Enthusiast
-        </SectionHeaderText>
-        <div className="flex flex-col gap-3">
-          {links.map((link, index) => (
-            <div
-              key={index}
-              className="relative group overflow-hidden flex items-center gap-1.5 flex-wrap text-xs sm:text-sm"
-            >
-              <div className="bg-purple-600 duration-400 group-hover:translate-x-full h-[2px] w-full absolute right-full bottom-0"></div>
-              <p>
-                <b>{link.name}</b>
-              </p>
-              <a
-                href={link.link}
-                target="_blank"
-                className="text-sky-400 cursor-pointer"
-              >
-                {link.content}
-              </a>
-            </div>
-          ))}
-        </div>
+        <PortfolioLinks links={links} />
       </section>
       <section>
-        <SectionHeaderText>Skills</SectionHeaderText>
-        <div className="flex flex-col gap-3">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="relative group overflow-hidden flex items-center gap-1.5 flex-wrap text-xs sm:text-sm"
-            >
-              <div className="bg-purple-600 duration-400 group-hover:translate-x-full h-[2px] w-full absolute right-full bottom-0"></div>
-              <p>
-                <b>{skill.name}</b>
-              </p>
-              <p>{skill.subSkill.join(", ")}</p>
-            </div>
-          ))}
-        </div>
+        <Skills skills={skills} />
       </section>
       <section>
-        <SectionHeaderText> Work History</SectionHeaderText>
-        <div className="flex gap-3">
-          {workHistory.map((work, index) => (
-            <div key={index} className="text-xs sm:text-sm">
-              <p>
-                <b>{work.company}</b> - ({work.from.toDateString()} -{" "}
-                {work.to.toLocaleString()})
-              </p>
-              <div>
-                <ul>
-                  {work.positions.map((position, index) => (
-                    <li key={index}>
-                      <p>
-                        <b>{position.positionTitle}</b>
-                        <ul>
-                          {position.acheivments.map((achievment, index) => (
-                            <li key={index}>{achievment}</li>
-                          ))}
-                        </ul>
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
+        <WorkHistoryComponent workHistory={workHistory} />
       </section>
       <section></section>
     </main>
