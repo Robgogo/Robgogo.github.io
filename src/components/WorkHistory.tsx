@@ -9,14 +9,14 @@ export function WorkHistoryComponent({
   return (
     <>
       <SectionHeaderText>Work History</SectionHeaderText>
-      <div className="flex gap-3">
+      <div className="gap-3">
         {workHistory.map((work, index) => (
-          <div key={index} className="text-xs sm:text-sm">
-            <p className="mb-3">
+          <div key={index} className="text-s sm:text-m">
+            <p className="mb-2">
               <b>{work.company}</b> - ({work.from.toDateString()} -{" "}
-              {work.to.toLocaleString()})
+              {work.to instanceof Date ? work.to.toDateString() : work.to})
             </p>
-            <div>
+            <div className="mb-4">
               <ul className="list-disc">
                 {work.positions.map((position, index) => (
                   <li key={index} className="ml-4">
