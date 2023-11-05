@@ -1,3 +1,4 @@
+import { EducationHistoryComponent } from "@/components/EducationHistory";
 import { PortfolioLinks } from "@/components/Links";
 import { Skills } from "@/components/Skills";
 import { WorkHistoryComponent } from "@/components/WorkHistory";
@@ -18,12 +19,14 @@ export default function Home() {
         <PortfolioLinks links={links} />
       </section>
       <section>
+        <EducationHistoryComponent educationHistory={educationHistory} />
+      </section>
+      <section>
         <Skills skills={skills} />
       </section>
       <section>
         <WorkHistoryComponent workHistory={workHistory} />
       </section>
-      <section></section>
     </main>
   );
 }
