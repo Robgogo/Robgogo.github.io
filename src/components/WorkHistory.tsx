@@ -1,5 +1,6 @@
 import { WorkHistory } from "@/types";
 import { SectionHeaderText } from "./SectionHeader";
+import { readableDateString } from "@/utils/dateUtils";
 
 export function WorkHistoryComponent({
   workHistory,
@@ -9,14 +10,14 @@ export function WorkHistoryComponent({
   return (
     <>
       <SectionHeaderText>Work History</SectionHeaderText>
-      <div className="flex gap-3">
+      <div className="gap-3">
         {workHistory.map((work, index) => (
-          <div key={index} className="text-xs sm:text-sm">
-            <p className="mb-3">
-              <b>{work.company}</b> - ({work.from.toDateString()} -{" "}
-              {work.to.toLocaleString()})
+          <div key={index} className="text-s sm:text-m">
+            <p className="mb-2">
+              <b>{work.company}</b> - ({readableDateString(work.from)} -{" "}
+              {work.to instanceof Date ? readableDateString(work.to) : work.to})
             </p>
-            <div>
+            <div className="mb-4">
               <ul className="list-disc">
                 {work.positions.map((position, index) => (
                   <li key={index} className="ml-4">
