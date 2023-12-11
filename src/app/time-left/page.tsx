@@ -13,7 +13,8 @@ const TimeLeft: NextPage = () => {
 
   const timeToDays = 60 * 60 * 24 * 1000;
 
-  let countDownDate = new Date("2024-01-03").getTime() + timeToDays;
+  let countDownDate =
+    new Date("2024-01-08T09:00:00.000+0300").getTime() + timeToDays;
 
   useEffect(() => {
     var updateTime = setInterval(() => {
