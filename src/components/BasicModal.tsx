@@ -33,11 +33,12 @@ export function BasicModal() {
               </h3>
               <div className="mt-2">
                 <p className="text-sm text-gray-700">
-                  I will allways Love you. You are my rock. You are my
-                  Everything.❤️❤️‍🔥❤️❤️‍🔥❤️❤️‍🔥❤️❤️‍🔥❤️❤️‍🔥❤️❤️‍🔥❤️❤️‍🔥
+                  Just a few more days, and I will be able to hold you in my
+                  hands.❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
                 </p>
                 <p className="text-sm text-gray-700">
-                  I want to be with you Forever, 😍😍😍😍😍😍😍😍😍
+                  I am so excited and cant wait for this.{" "}
+                  <i>I LOVE YOU SOOOOOO MUCH</i> 😍😍😍😍😍😍😍😍😍
                 </p>
               </div>
             </div>
