@@ -32,7 +32,7 @@ const TimeLeft: NextPage = () => {
       );
       let newSeconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-      if (newDays === 12) {
+      if (newDays === 6 || newDays === 5 || newDays === 4) {
         setShowModal(true);
       }
 
